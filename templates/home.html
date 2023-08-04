@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home page</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">  
+		<style>
+			video 
+			{
+  				object-fit: cover;
+  				width: 100vw;
+  				height: 100vh;
+  				position: fixed;
+  				top: 0;
+  				left: 0;
+			}
+
+			.div3
+			{
+  				width: 10px;
+  				height: 10px;
+  				background: red;
+  				position: relative;
+  				animation: myfirst 5s 1;
+  				animation-direction: normal;
+			}
+
+			.divuserloginbtn
+			{
+				margin-left: 100px;
+				margin-top: 50px;
+  				width: 10px;
+  				height: 10px;
+  				background: red;
+  				position: relative;
+  				animation: myfirst 5s 1;
+  				animation-direction: normal;
+			}
+
+			@keyframes myfirst 
+			{
+   				 0%   {background: red; left: 0px; top: 400px;}
+  				25%  {background: yellow; }
+  				50%  {background: blue; }
+  				75%  {background: green; }
+  				100% {background: red; left: 0px; top: 0px;}
+			}
+			
+			.div2
+			{
+				margin-left: 1165px;
+				margin-top: 200spx;
+  				width: 10px;
+  				height: 10px;
+  				background: red;
+  				position: relative;
+  				animation: myfirst 5s 1;
+  				animation-direction: normal;
+			}
+
+
+			@keyframes myfirst 
+			{
+   				 0%  {background: red; left: 0px; top: 400px;}
+  				25%  {background: yellow; }
+  				50%  {background: blue; }
+  				75%  {background: green; }
+  				100% {background: red; left: 0px; top: 0px;}
+			}
+		
+			.content 
+			{
+  				position: fixed;
+  				bottom: 0;
+  				background: rgba(0, 0, 0, 0.5);
+  				color: #f1f1f1;
+  				width: 100%;
+  				padding:5px;
+			}			
+			#myBtn 
+			{
+  				width: 200px;
+  				font-size: 18px;
+  				padding: 10px;
+  				border: none;
+  				background: #000;
+  				color: #fff;
+  				cursor: pointer;
+			}
+
+			#myBtn:hover 
+			{
+  				background: #ddd;
+  				color: black;
+			}
+	
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="videoBC">
+			<video id="videoBG" autoplay muted loop>
+			  <source src="{{ url_for('static', filename='Project_video_01.mp4') }}" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="div3">
+			<button type="button" onclick="window.location.href='{{ url_for( 'login') }}';">User Login</button>		
+		</div>
+
+		<div class="div2">
+			<button type="button" onclick="window.location.href='{{ url_for( 'login') }}';">Employee Login</button>				
+		</div>
+
+		<div class="content">
+			<p>lets rool</p>
+  			<button id="myBtn" onclick="myFunction()">Pause</button>
+		</div>
+	</body>
+</html>

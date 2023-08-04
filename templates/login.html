@@ -1,0 +1,175 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>User Login Form</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<style>
+			.video 
+			{
+  				object-fit: cover;
+  				width: 100vw;
+  				height: 100vh;
+  				position: fixed;
+  				top: 0;
+  				left: 0;
+			}
+
+			#box1
+		  	{
+			  visibility: hidden;
+			  background-color: white;
+			  width: 100px;
+			  height: 40px;
+			}
+
+			#box2
+		  	{
+			  visibility: hidden;
+			  background-color: white;
+			  width: 100px;
+			  height: 40px;
+			}
+			#boxbtn
+		  	{
+			  visibility: hidden;
+			  background-color: white;
+			  width: 100px;
+			  height: 140px;
+			}
+
+			div.tbox 
+			{
+  				margin: 30px;
+  				border: 0px solid black;
+  				opacity: 3.6;
+				background-color: white;
+				transform: skewY(17deg);
+			}
+
+			.divusername
+			{
+				margin-left: 500px;
+				margin-top: 270px;
+  				border: 0px solid black;
+  				width: 50px;
+				background-position: 50px 50px;
+  				background-size: 75%;
+			}
+			.divpass
+			{
+				margin-left: 557px;
+				margin-top: -10px;
+  				border: 0px solid black;
+  				width: 50px;
+				background-position: 50px 50px;
+  				background-size: 75%;
+			}
+
+			.divbtn
+			{
+				margin-left: 557px;
+				margin-top: 100px;
+  				border: 20px solid black;
+				hight: 100px
+  				width: 100px;
+				background-position: 50px 50px;
+  				background-size: 175%;
+			}
+
+			.content 
+			{
+  				position: fixed;
+  				bottom: 0;
+  				background: rgba(0, 0, 0, 0.5);
+  				color: #f1f1f1;
+  				width: 100%;
+  				padding:5px;
+			}
+
+		</style>
+	</head>
+	<body>
+			
+		<div class="container">
+			<div class="video">
+				<video id="videoBG" autoplay>
+					<source src="{{ url_for('static', filename='Project_video_02.mp4') }}" type="video/mp4">
+				  </video>
+				</div> 
+			</div>  
+			<h2>User Login</h2>
+			<form action="{{ url_for('login') }}" method="post">
+	    		{% if mesage is defined and mesage %}
+				<div class="alert alert-warning">{{ mesage }}</div>
+				{% endif %}
+				<div class="divusername">
+					<div class="tbox">
+						<div id="box1">
+							<div class="form-group">
+								<p style="background-color:#FCF5D8;"><input style="background-color:#FCF5D8;color:#AD8C08;" type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email" required></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="divpass">
+					<div class="tbox">
+						<div id="box2">
+							<div class="form-group">
+								<p style="background-color:#FCF5D8;"><input style="background-color:#FCF5D8;color:#AD8C08;" type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd" required></a>
+							</div>
+						</div>
+					</div>
+				</div>	
+
+			 
+				</div> 
+				<div id="boxbtn">
+					<div class="div3" style="
+    					width: 10px;
+    					height: 10px;
+   	 					position: relative;
+    					animation: myfirst 5s 1;
+    					animation-direction: normal;
+						padding-left : 816px">
+							<button style="border-radius: 50%;width: 80px;transform: skewY(20deg);"  type="submit" class="btn btn-primary">User Login</button>		
+					</div>
+				</div>
+				<div class="content">
+					<div style = "background: #000 none repeat scroll 0 0;
+                		color: tan;
+                		font-weight: 600;
+                		margin: 2rem 3rem 0;
+                		mix-blend-mode: overlay;
+                		padding: 5px 15px;
+                		text-align: center;">
+					<p style="color:white;" class="bottom">Dont't have an account? <a class="bottom" href="{{url_for('register')}}"> Register here</a></p>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script>
+
+			const el = document.getElementById('box1');
+			setTimeout(() =>
+			{
+				  el.style.visibility = 'visible';
+			},3000);
+
+			const al = document.getElementById('box2');
+			setTimeout(() =>
+			{
+				  al.style.visibility = 'visible';
+			},3500);
+
+			const bl = document.getElementById('boxbtn');
+			setTimeout(() =>
+			{
+				  bl.style.visibility = 'visible';
+			},4500);
+			
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        *
+        {
+            box-sizing: border-box;
+        }
+
+        .col-50 
+        {
+            -ms-flex: 50%;
+            flex: 50%;
+        }
+
+        .col-75 
+        {
+            -ms-flex: 75%;
+            flex: 75%;
+        }
+        .col-50,
+        .col-75 
+        {
+            padding: 0 16px;
+        }
+
+        input[type=text] 
+        {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label 
+        {
+            margin-bottom: 10px;
+            display: block;
+        }
+        .btn 
+        {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+        .btn:hover 
+        {
+            background-color: #45a049;
+        }
+
+        span.price 
+        {
+            float: right;
+            color: grey;
+        }
+
+        0@media (max-width: 800px) 
+        {
+            .row 
+            {
+                flex-direction: column-reverse;
+            }
+            .col-25 
+            {
+                margin-bottom: 20px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <h2><center>Please enter your card details for payment</center></h2>
+        <div>
+            <div class="col-75">
+                <div>
+                    <form>
+                        <div class="row">
+                            <div class="col-50">
+                                <h3>Billing Address</h3>
+                                <label for="fname">Full Name <input type="text" id="fname" name="firstname" placeholder="full name" required></label>
+                                <label for="email"> Email <input type="text" id="email" name="email" placeholder="abcd@example.com" required></label>
+                                <label for="adr"> Address  <input type="text" id="adr" name="address" placeholder="1629 14th ave South" required></label>
+                                <label for="city"> City<input type="text" id="city" name="city" placeholder="City" required></label>
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="state">State <input type="text" id="state" name="state" placeholder="State" required></label>
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="zip">Zip <input type="text" id="zip" name="zip" placeholder="10001" required></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-50">
+                                <h3>card details</h3>
+                                <label for="cname">Name on Card <input type="text" id="cname" name="cardname" placeholder="John More Doe" required></label>
+                                
+                                <label for="ccnum">Credit card number  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required></label>
+                               
+                                <label for="expmonth">Exp Month <input type="text" id="expmonth" name="expmonth" placeholder="September" required></label>
+                                
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="expyear">Exp Year <input type="text" id="expyear" name="expyear" placeholder="2050" required></label>
+                                        
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="cvv">CVV <input type="text" id="cvv" name="cvv" placeholder="352" required></label>
+                                        
+                                    </div>
+                                </div>
+                    <label>
+                    <input type="submit" value="Click here for payment" class="btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html

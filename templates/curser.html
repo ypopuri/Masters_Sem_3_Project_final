@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Birds Flying Towards Cursor</title>
+        <style>
+            body 
+            {
+                margin: 10;
+                overflow: hidden;
+            }
+            .bird 
+            {
+                width: 150px;
+                height: 150px;
+                background-image: url('one.gif');
+                background-size: cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }      
+        </style>
+    </head>
+    <body>
+        <div class="bird"></div>
+        <script>
+            document.addEventListener('mousemove', (e) => 
+            {
+                const bird = document.querySelector('.bird');
+                const birdRect = bird.getBoundingClientRect();
+                const birdX = birdRect.left + birdRect.width / 2;
+                const birdY = birdRect.top + birdRect.height / 2;
+                const cursorX = e.clientX;
+                const cursorY = e.clientY;
+                const deltaX = cursorX - birdX;
+                const deltaY = cursorY - birdY;
+                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                const speed = 5.5; // Adjust the speed as desired
+                const moveX = (deltaX / distance) * speed;
+                const moveY = (deltaY / distance) * speed;
+                const newPosX = birdX + moveX;
+                const newPosY = birdY + moveY;
+                bird.style.left = newPosX + 'px';
+                bird.style.top = newPosY + 'px';
+                const angle = Math.atan2(deltaY, deltaX);
+                bird.style.transform = `translate(-50%, -50%) rotate(${angle}rad)`;
+            });
+        </script>
+    </body>
+</html>

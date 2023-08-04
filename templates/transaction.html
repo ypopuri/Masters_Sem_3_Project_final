@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your History</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        #dataContainer {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* Additional styling for specific keys */
+        strong:after {
+            content: ':';
+        }
+
+        .item-total {
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="dataContainer">
+       
+        <!-- The data will be populated dynamically here -->
+    </div>
+
+    <script>
+        const data = {{ accountDetials | tojson }};
+
+        // Function to format and display data
+        function displayData() {
+            const container = document.getElementById('dataContainer');
+            let output = '';
+output+=' <h2> Your History </h2>'
+            data.forEach(item => {
+                output += '<p>';
+                for (const key in item) {
+                    output += `<strong>${key}:</strong> ${item[key]}<br>`;
+                }
+                output += '</p>';
+            });
+
+            container.innerHTML = output;
+        }
+        displayData();
+    </script>
+</body>
+</html>

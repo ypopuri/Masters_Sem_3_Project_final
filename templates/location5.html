@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <style>
+            family=Lato:400,300,300italic,400italic,700,700italic,900);
+            * {
+              box-sizing: border-box;
+            }
+            body {
+                font-family: "Lato","Avenir Next",Arial,sans-serif;
+              margin: 0;
+              background: #000;
+              background-size: cover;
+            }
+            video {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              -o-object-fit: cover;
+                 object-fit: cover;
+              -o-object-position: center;
+                 object-position: center;
+            }
+            .overlay 
+            {
+                min-height: 100vh;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+            .overlay h2 
+            {
+                background: #000 none repeat scroll 0 0;
+                color: tan;
+                font-weight: 600;
+                margin: 2rem 3rem 0;
+                mix-blend-mode: overlay;
+                padding: 5px 15px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <video playsinline autoplay muted loop>
+            <source src="ISTANBUL.mp4" type="video/mp4">
+            <source src="{{ url_for('static', filename='NEW KYOTO.mp4') }}" type="video/mp4">
+        </video>
+        <div class="overlay">
+            <form action="{{ url_for("location5")}}" method="post">
+                <h2><label for="Date">Select start Date <input type="date" id="StartDate" name="StartDate"></label></h2>
+
+                <h2><label for="Date">Select end Date <input type="date" id="EndDate" name="EndDate"></label></h2>
+                
+                <h2><label for="Firstname">First name: <input type="text" id="Firstname" name="Firstname"></label></h2>
+                
+                <h2><label for="Lastname">last name: <input type="text" id="Lastname" name="Lastname"></label></h2>
+                
+                <h2><label for="email">email <input type="text" id="Email" name="Email"></label></h2>
+               
+                <h2><label for="number">number of persons <input type="text" id="noperson" name="noperson"></label></h2>
+               
+                <h2><input type="submit" value="Submit"></h2>
+            </form>
+        </div>
+    </body>
+</html>
